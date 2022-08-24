@@ -1,0 +1,35 @@
+# 3. В базе из пункта 2 создать таблицу: не менее трёх столбцов различных типов. SQL-запрос на создание таблицы добавить в текстовый файл class1_hometask.txt.
+
+postgres=# CREATE TABLE animals (
+postgres(# id INT GENERATED ALWAYS AS IDENTITY,
+postgres(# kind VARCHAR(100),
+postgres(# age INT,
+postgres(# nickname VARCHAR(100)
+postgres(# );
+
+# 4. В таблицу из пункта 3 вставить не менее трёх строк. SQL-запрос на вставку добавить в текстовый файл class1_hometask.txt.
+
+postgres=# INSERT INTO animals (kind, age, nickname)
+postgres-# VALUES
+postgres-# ('сова', 5, 'глазастик'),
+postgres-# ('волк', 3, 'заходиЕслиЧё'),
+postgres-# ('медведь', 9, 'бурый');
+
+# 5. Используя мета-команды psql, вывести список всех сущностей в базе данных из пункта 2. Полученный список сущностей добавить в текстовый файл class1_hometask.txt. (Не совсем понял про какие именно сущности... или имелись ввиду атрибуты?)
+
+List of relations
+ Schema |      Name      |   Type   |  Owner   
+--------+----------------+----------+----------
+ public | animals        | table    | postgres
+ public | animals_id_seq | sequence | postgres
+(2 rows)
+
+Table "public.animals"
+  Column  |          Type          | Collation | Nullable |           Default            
+----------+------------------------+-----------+----------+------------------------------
+ id       | integer                |           | not null | generated always as identity
+ kind     | character varying(100) |           |          | 
+ age      | integer                |           |          | 
+ nickname | character varying(100) |           |          | 
+
+
